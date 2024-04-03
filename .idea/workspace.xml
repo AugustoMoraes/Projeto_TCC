@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eabf60a-f58d-48ae-85ed-7b835b10344c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/code/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/code/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/llmMaritaca.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/similaridade.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/similaridade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/redeNeural.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/redeNeural.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +41,11 @@
     "Python.llmMaritaca.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
+    "Python.redeNeural.executor": "Run",
     "Python.similaridade.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "installRNA",
     "last_opened_file_path": "/home/augustinho/Documentos/projetos/python/TCC/code"
   }
 }]]></component>
@@ -57,7 +54,7 @@
       <recent name="$PROJECT_DIR$/code" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.redeNeural">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TCC" />
       <option name="ENV_FILES" value="" />
@@ -146,6 +143,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="redeNeural" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="TCC" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/code/redeNeural.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="similaridade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="TCC" />
       <option name="ENV_FILES" value="" />
@@ -170,6 +189,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.redeNeural" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.similaridade" />
         <item itemvalue="Python.Main" />
