@@ -17,12 +17,9 @@ def resposta_similar(pergunta):
         vetor_texto = []
         vetor_similaridade = []
 
-        #conteudo = "quais os problemas com o não cumprimento da LGPD?" #PERGUNTA QUE NÃO TEM NA BASE DE DADOS - SEMELHANTE
-        #conteudo = 'O que é a LGPD?' #PERGUNTA QUE NÃO TEM NA BASE DE DADOS - IDENTICA
+
         conteudo = pergunta#'O que é a LGPD?'
-        #conteudo = 'Qual a Diferença entre controlador e operador de dados na LGPD?' # PERGUNTA QUE NÃO TEM NA BASE DE DADOS
-        #conteudo = 'Como utilizar algoritmos de IA?' # PERGUNTA NADA HAVER
-        #conteudo = 'Cite três tipos de Banco de Dados.' # PERGUNTA NADA HAVER
+
         # resposta = resposta_similar(data)
         # print('---------------PERGUNTA SIMILAR ENCONTRADA---------------------------')
         # print(f'Pergunta: {resposta[0]}')
@@ -38,10 +35,10 @@ def resposta_similar(pergunta):
                 #similaridade = cosine_similarity([conteudo_vetor], [i])[0][0]
                 vetor_similaridade.append(cosine_similarity([conteudo_vetor], [i])[0][0])
                 #print(f'Similaridade {i} - {vetor_similaridade}')
-        p = 0
-        for i in vetor_similaridade:
-                print(f'pergunta {p} - Similaridade: {i}')
-                p = p + 1
+        # p = 0
+        # for i in vetor_similaridade:
+        #         print(f'pergunta {p} - Similaridade: {i}')
+        #         p = p + 1
 
         def resposta_similar(lista):
                 maior = 0
@@ -54,12 +51,15 @@ def resposta_similar(pergunta):
                                 position = j
                         j = j + 1
                         #vetor_similaridade.append(cosine_similarity([conteudo_vetor], [i])[0][0])
-                resposta = lista[position]
-                return resposta
+                #resposta = lista[position]
+
+                return maior, position, lista
 
 
-        resposta = resposta_similar(data)
-        return resposta
-        print('---------------PERGUNTA SIMILAR ENCONTRADA---------------------------')
-        print(f'Pergunta: {resposta[0]}')
-        print(f'Resposta: {resposta[1]}')
+        result = resposta_similar(data)
+        # print('---------------PERGUNTA SIMILAR ENCONTRADA---------------------------')
+        # print(f'Pergunta: {resposta[0]}')
+        # print(f'Resposta: {resposta[1]}')
+        return result
+
+#print(resposta_similar('O que é a LGPD?'))
