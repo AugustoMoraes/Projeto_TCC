@@ -1,6 +1,7 @@
 import pandas as pd
 from similaridade import resposta_similar
 from redeNeural import classifica_contexto
+from llm import pergunta_llm, update_dataset
 
 #conteudo = "quais os problemas com o não cumprimento da LGPD?" #PERGUNTA QUE NÃO TEM NA BASE DE DADOS - SEMELHANTE
 #conteudo = 'O que é a LGPD?' #PERGUNTA QUE NÃO TEM NA BASE DE DADOS - IDENTICA
@@ -8,7 +9,7 @@ from redeNeural import classifica_contexto
 #conteudo = 'Como utilizar algoritmos de IA?' # PERGUNTA NADA HAVER
 #conteudo = 'Cite três tipos de Banco de Dados.' # PERGUNTA NADA HAVER
 df = pd.read_csv('../dataset/dataset.csv')
-pergunta = 'O que é banco de dados?'
+pergunta = input("Faça sua pergunta: ")#'Cite três tipos de Banco de Dados.'
 classificado = classifica_contexto(df, pergunta)
 maior_similaridade, position, dados = resposta_similar(df, pergunta)
 
@@ -18,7 +19,10 @@ if(classificado):
         print(f'Posição: {position}')
         print(f'Dados: {dados[position]}')
     else:
-        print('Vai pesquisar na llm do Sabiá 2')
-
+        resposta = pergunta_llm(pergunta)
+        print(resposta)
+        update_dataset(df, pergunta, resposta, 1)
+        #print('Vai pesquisar na llm do Sabiá 2')
 else:
+    update_dataset(df, pergunta, '', 0)
     print('Pergunta inválida!\nRealizar pergunta que esteja no contexto da LGPD')

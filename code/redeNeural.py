@@ -2,14 +2,14 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Embedding, LSTM
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow import keras
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
+# from tensorflow import keras
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import numpy as np
 
 #df = pd.read_csv('../dataset/dataset.csv')
-def classifica_contexto(pergunta, df):
+def classifica_contexto(df, pergunta):
     perguntas = df['Pergunta']
 
     tokenizer = Tokenizer(num_words=10000)  # Limita o vocabulário a 10.000 palavras

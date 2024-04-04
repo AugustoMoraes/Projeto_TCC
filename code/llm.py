@@ -1,4 +1,4 @@
-
+import pandas as pd
 import maritalk
 
 def pergunta_llm(pergunta):
@@ -19,3 +19,7 @@ def pergunta_llm(pergunta):
         top_p=0.95)["answer"]
 
     return resposta
+def update_dataset(df: pd.DataFrame, pergunta, resposta, classe):
+    novo_registro = {'Pergunta': pergunta, 'Resposta': resposta, 'LGPD': classe}
+    df = df._append(novo_registro, ignore_index = True)
+    df.to_csv('../dataset/dataset.csv', index= False)
