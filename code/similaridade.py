@@ -4,10 +4,10 @@ import spacy
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-def resposta_similar(pergunta):
+def resposta_similar(df, pergunta):
         nlp = spacy.load("pt_core_news_sm")
 
-        df = pd.read_csv('../dataset/dataset.csv')
+        #df = pd.read_csv('../dataset/dataset.csv')
         perguntas_lgpd = df.loc[df['LGPD'] == 1]  # LISTA DE APENAS PERGUNTAS QUE ESTÃO NO CONTEXTO DA LGPD
 
         conjunto_de_dados = perguntas_lgpd['Pergunta'] # Pega apenas a coluna Perguntas
@@ -40,7 +40,7 @@ def resposta_similar(pergunta):
         #         print(f'pergunta {p} - Similaridade: {i}')
         #         p = p + 1
 
-        def resposta_similar(lista):
+        def resposta(lista):
                 maior = 0
                 position = 0
                 j = 0
@@ -56,7 +56,7 @@ def resposta_similar(pergunta):
                 return maior, position, lista
 
 
-        result = resposta_similar(data)
+        result = resposta(data)
         # print('---------------PERGUNTA SIMILAR ENCONTRADA---------------------------')
         # print(f'Pergunta: {resposta[0]}')
         # print(f'Resposta: {resposta[1]}')
