@@ -48,6 +48,7 @@ historico = model.fit(X_padded, y, batch_size=32, epochs=100, validation_split=0
 # legend = ax[1].legend(loc='best', shadow=True)
 #
 # plt.suptitle('Desempenho do treinamento', fontsize = 18)
+# plt.savefig('../grafico/grafico.png')
 # plt.show()
 
 #pergunta = 'O que é banco de dados?'

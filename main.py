@@ -1,10 +1,16 @@
-from code.llm import Llm
+import matplotlib.pyplot as plt
 
-class Main:
-    pass
+# Dados
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
 
-pergunta = Llm('O que é LGPD?')
+# Criar o gráfico
+plt.plot(x, y)
 
-#pergunta = llm.pergunta_llm('O que é LGPD?')
-resposta = pergunta.pergunta_llm()
-print(resposta)
+# Adicionar rótulos
+plt.xlabel('Eixo X')
+plt.ylabel('Eixo Y')
+plt.title('Meu Gráfico')
+
+# Exibir o gráfico
+plt.show()
