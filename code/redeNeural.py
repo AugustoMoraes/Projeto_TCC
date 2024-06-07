@@ -19,7 +19,6 @@ def classifica_contexto(df, pergunta):
     X = pad_sequences(sequences)  # Assume um comprimento máximo de 10 para as perguntas
     y = df['LGPD']
 
-    # Suponha que `X` são suas sequências tokenizadas e `y` são os rótulos (0 ou 1)
     X_padded = pad_sequences(X, maxlen=100)  # Garantir que todas as sequências tenham o mesmo tamanho
 
     # Construir o modelo
@@ -52,15 +51,7 @@ def classifica_contexto(df, pergunta):
     # plt.savefig('../grafico/grafico.png')
     # plt.show()
 
-    #pergunta = 'O que é banco de dados?'
-#def classifica_pergunta(pergunta):
     pergunta = pergunta#'O que significa LGPD?'
-    #pergunta = 'Qual orgão é responsável por fiscalizar a LGPD?'
-    #pergunta = 'como criar um modelo de Redes Neurais para classificação'
-
-    # new_tokenizer = Tokenizer()
-    # nova_pergunta = new_tokenizer.texts_to_sequences([pergunta]) # CONVERTE TEXTOS EM NÚMEROS INTEIROS
-    # nova_pergunta = pad_sequences(nova_pergunta, maxlen=100) # GARANTE QUE TODAS AS SEQUÊNCIAS DE TEXTOS TENHAM O MESMO COMPRIMENTO PARA PODER ALIMENTAR O MODELO
 
     nova_pergunta = tokenizer.texts_to_sequences([pergunta]) # CONVERTE TEXTOS EM NÚMEROS INTEIROS
     nova_pergunta = pad_sequences(nova_pergunta, maxlen=100) # GARANTE QUE TODAS AS SEQUÊNCIAS DE TEXTOS TENHAM O MESMO COMPRIMENTO PARA PODER ALIMENTAR O MODELO NEURAL
@@ -70,4 +61,8 @@ def classifica_contexto(df, pergunta):
     previsao = (previsao > 0.5).astype('int32') # retorna uma matriz
 
     return previsao
+
+
+
+
     #print(previsao[0][0])

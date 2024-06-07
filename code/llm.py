@@ -1,10 +1,10 @@
 import pandas as pd
 import maritalk
-
+minha_chave = "100088405894968274443$48d83f597eed3dac55ca7ab70e8d6d46628784d793046bf36006985b4d18354e"
 def pergunta_llm(pergunta):
     model = maritalk.MariTalk(
-        key="100088405894968274443$48d83f597eed3dac55ca7ab70e8d6d46628784d793046bf36006985b4d18354e",
-        model="sabia-2-medium"  # No momento, suportamos os modelos sabia-2-medium e sabia-2-small
+        key= minha_chave,
+        model="sabia-2-medium"
     )
 
     messages = [
