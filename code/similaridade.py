@@ -44,10 +44,3 @@ def resposta_similar(df, pergunta):
         result = resposta(data)
 
         return result
-inicio = time.time()
-resposta = resposta_similar(data, 'quais os problemas com o não cumprimento da LGPD?')
-fim = time.time()
-
-print(resposta)
-
-print(f'Tempo de execução: {fim-inicio}')
