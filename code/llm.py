@@ -23,3 +23,8 @@ def update_dataset(df: pd.DataFrame, pergunta, resposta, classe):
     novo_registro = {'Pergunta': pergunta, 'Resposta': resposta, 'LGPD': classe}
     df = df._append(novo_registro, ignore_index = True)
     df.to_csv('../dataset/dataset.csv', index= False)
+
+def add_time_llm(df: pd.DataFrame, pergunta, time, llm):
+    novo_registro = {'pergunta': pergunta, 'tempo': time, 'llm': llm}
+    df = df._append(novo_registro, ignore_index=True)
+    df.to_csv('../dataset/tempo_de_resposta.csv', index=False)
