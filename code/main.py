@@ -11,7 +11,7 @@ from redeNeural import classifica_contexto
 from llm import pergunta_llm, update_dataset
 
 df = pd.read_csv('../dataset/dataset.csv')
-pergunta = input("Faça sua pergunta: ")
+pergunta = 'o que são teste de softwares?'#input("Faça sua pergunta: ")
 classificado = classifica_contexto(df, pergunta)
 maior_similaridade, position, dados = resposta_similar(df, pergunta)
 

@@ -1,3 +1,4 @@
+import keras
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense, Embedding, LSTM
 from tensorflow.keras.preprocessing.text import Tokenizer
@@ -35,8 +36,9 @@ def classifica_contexto(df, pergunta):
 
     # Treinar o modelo
     historico = model.fit(X_padded, y, batch_size=32, epochs=100, validation_split=0.2)
+    #m = keras.metrics.Accuracy(name="accuracy", dtype=None)
     print(historico)
-
+    #acuracia = historico.history['accuracy']
     # GRAFICO
     # fig, ax = plt.subplots(1,2, figsize=(14,5))
     # ax[0].plot(historico.history['loss'], color='#111487', linewidth=3, label="Perda de treinamento")
@@ -57,7 +59,7 @@ def classifica_contexto(df, pergunta):
     nova_pergunta = pad_sequences(nova_pergunta, maxlen=100) # GARANTE QUE TODAS AS SEQUÊNCIAS DE TEXTOS TENHAM O MESMO COMPRIMENTO PARA PODER ALIMENTAR O MODELO NEURAL
     previsao = model.predict(nova_pergunta)
 
-
+    #print(f'Acurácia: ${acuracia}')
     previsao = (previsao > 0.5).astype('int32') # retorna uma matriz
 
     return previsao
